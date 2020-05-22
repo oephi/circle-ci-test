@@ -22,30 +22,13 @@ jobs:
             - run:
                 name: Build
                 command: npm run build
-
-  install-firebase-tools:
-    executor:
-      name: node/default
-    steps:
-      - run:
-          name: Install Firebase Tools
-          command: npm install --prefix=./firebase-deploy firebase-tools
-
-  deploy-to-firebase:
-    executor:
-      name: node/default
-    steps:
-      - run:
-          name: Deploy to Firebase
-          command: ./node_modules/.bin/firebase deploy --token "$FIREBASE_TOKEN"
-
+            - run:
+                name: Install Firebase Tools
+                command: npm install --prefix=./firebase-deploy firebase-tools
+            - run:
+                name: Deploy to Firebase
+                command: ./node_modules/.bin/firebase deploy --token "$FIREBASE_TOKEN"
 workflows:
   build-and-test:
     jobs:
       - build-and-test
-  install-firebase-tools:
-    jobs:
-      - install-firebase-tools
-  deploy-to-firebase:
-    jobs:
-      - deploy-to-firebase
