@@ -2,7 +2,7 @@ version: 2.1
 orbs:
   node: circleci/node@1.1.6
 jobs:
-  build-and-test:
+  test-build-deploy:
     executor:
       name: node/default
     steps:
@@ -29,6 +29,6 @@ jobs:
                 name: Deploy to Firebase
                 command: ./node_modules/.bin/firebase deploy --token "$FIREBASE_TOKEN"
 workflows:
-  build-and-test:
+  test-build-deploy:
     jobs:
-      - build-and-test
+      - test-build-deploy
