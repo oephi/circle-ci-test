@@ -1,7 +1,6 @@
 version: 2.1
 orbs:
   node: circleci/node@1.1.6
-  firebase-deploy: cloudliner/firebase-deploy@0.0.2
 jobs:
   build-and-test:
     executor:
