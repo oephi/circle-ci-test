@@ -12,11 +12,11 @@ function App() {
         </p>
         <a
           className="App-link"
-          href="https://reactjs.org"
+          href="https://svelte.dev/"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Fuck React!
         </a>
       </header>
     </div>
